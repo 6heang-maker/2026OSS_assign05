@@ -61,6 +61,47 @@
             let editIndex = -1;
 
 
+            function render(){
+
+                friendList.innerHTML = "";
+
+                for(let i = 0; i < friends.length; i++){
+
+                    const tr = document.createElement("tr");
+                    const td1 = document.createElement("td");
+                    td1.textContent = friends[i].id;
+
+                    const td2 = document.createElement("td");
+                    td2.textContent = friends[i].name;
+
+                    const td3 = document.createElement("td");
+                    td3.textContent = friends[i].age;
+
+                    const td4 = document.createElement("td");
+                    td4.textContent = friends[i].phone;
+
+                    const td5 = document.createElement("td");
+                    td5.textContent = friends[i].email;
+
+                    const td6 = document.createElement("td");
+                    td6.textContent = friends[i].group;
+
+                    const td7 = document.createElement("td");
+
+
+
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+                    tr.appendChild(td4);
+                    tr.appendChild(td5);
+                    tr.appendChild(td6);
+                    tr.appendChild(td7);
+                    friendList.appendChild(tr);
+                }
+            }
+
+            render();
         });
     </script>
 
