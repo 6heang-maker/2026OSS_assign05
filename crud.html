@@ -21,6 +21,46 @@
             const saveBtn = document.querySelector("#saveBtn");
             const friendList = document.querySelector("#friendList");
 
+
+            let friends = [
+                {
+                    id: 1,
+                    name: "동하",
+                    age: 25,
+                    phone: "010-1111-1111",
+                    email: "kim@handong.ac.kr",
+                    group: "School"
+                },
+                {
+                    id: 2,
+                    name: "온유",
+                    age: 25,
+                    phone: "010-2222-2222",
+                    email: "lee@handong.ac.kr",
+                    group: "School"
+                },
+                {
+                    id: 3,
+                    name: "예준",
+                    age: 23,
+                    phone: "010-3333-3333",
+                    email: "park@handong.ac.kr",
+                    group: "School"
+                },
+                {
+                    id: 4,
+                    name: "지원",
+                    age: 24,
+                    phone: "010-4444-4444",
+                    email: "kim@handong.ac.kr",
+                    group: "School"
+                }
+            ];
+
+            let nextId = 5;
+            let editIndex = -1;
+
+
         });
     </script>
 
@@ -29,23 +69,29 @@
 <body>
 
     <h1>Friend Management</h1>
+
     <form id="friendForm">
+
         <p>
             Name
             <input type="text" id="name">
         </p>
+
         <p>
             Age
             <input type="number" id="age">
         </p>
+
         <p>
             Phone
             <input type="text" id="phone">
         </p>
+
         <p>
             Email
             <input type="email" id="email">
         </p>
+
         <p>
             Group
             <select id="group">
@@ -56,9 +102,11 @@
                 <option value="Other">Other</option>
             </select>
         </p>
+
         <button type="submit" id="saveBtn">Add</button>
 
     </form>
+
     <hr>
 
     <table border="1">
