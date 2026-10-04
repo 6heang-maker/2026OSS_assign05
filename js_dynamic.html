@@ -11,7 +11,6 @@
             font-family: Arial, sans-serif;
             padding: 30px;
         }
-
         input {
             padding: 6px;
         }
@@ -27,7 +26,6 @@
     </style>
 
     <script>
-
         window.addEventListener("load", function(){
 
             const fruit = document.querySelector("#fruit");
@@ -35,7 +33,6 @@
             const list = document.querySelector("#list");
 
             btn1.addEventListener("click", function(){
-
                 if(fruit.value.trim() === ""){
                     alert("내용을 입력하세요.");
                     return;
@@ -52,9 +49,9 @@
                 rbtn.addEventListener("click", function(e){
 
                     e.target.parentElement.remove();
-
                 });
 
+                
                 one.appendChild(rbtn);
 
                 list.appendChild(one);
