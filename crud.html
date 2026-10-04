@@ -68,6 +68,7 @@
                 for(let i = 0; i < friends.length; i++){
 
                     const tr = document.createElement("tr");
+
                     const td1 = document.createElement("td");
                     td1.textContent = friends[i].id;
 
@@ -89,7 +90,6 @@
                     const td7 = document.createElement("td");
 
 
-
                     tr.appendChild(td1);
                     tr.appendChild(td2);
                     tr.appendChild(td3);
@@ -97,11 +97,39 @@
                     tr.appendChild(td5);
                     tr.appendChild(td6);
                     tr.appendChild(td7);
+
                     friendList.appendChild(tr);
                 }
             }
 
+
+            form.addEventListener("submit", function(e){
+
+                e.preventDefault();
+
+                const newFriend = {
+                    id: nextId,
+                    name: name.value,
+                    age: Number(age.value),
+                    phone: phone.value,
+                    email: email.value,
+                    group: group.value
+                };
+
+                friends.push(newFriend);
+                nextId = nextId + 1;
+                name.value = "";
+                age.value = "";
+                phone.value = "";
+                email.value = "";
+                group.value = "";
+
+
+                render();
+
+            });
             render();
+
         });
     </script>
 
