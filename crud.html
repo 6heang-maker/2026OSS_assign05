@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Management</title>
+
+    <style>
+
+    </style>
+
+    <script>
+        window.addEventListener("load", function(){
+
+            const form = document.querySelector("#friendForm");
+            const name = document.querySelector("#name");
+            const age = document.querySelector("#age");
+            const phone = document.querySelector("#phone");
+            const email = document.querySelector("#email");
+            const group = document.querySelector("#group");
+            const saveBtn = document.querySelector("#saveBtn");
+            const friendList = document.querySelector("#friendList");
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Friend Management</h1>
+    <form id="friendForm">
+        <p>
+            Name
+            <input type="text" id="name">
+        </p>
+        <p>
+            Age
+            <input type="number" id="age">
+        </p>
+        <p>
+            Phone
+            <input type="text" id="phone">
+        </p>
+        <p>
+            Email
+            <input type="email" id="email">
+        </p>
+        <p>
+            Group
+            <select id="group">
+                <option value="">Select</option>
+                <option value="School">School</option>
+                <option value="Church">Church</option>
+                <option value="Family">Family</option>
+                <option value="Other">Other</option>
+            </select>
+        </p>
+        <button type="submit" id="saveBtn">Add</button>
+
+    </form>
+    <hr>
+
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Group</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="friendList">
+
+        </tbody>
+
+    </table>
+
+</body>
+</html>
