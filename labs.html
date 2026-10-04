@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #container {
+        width: 200px;
+        background-color: rgb(249, 249, 221);
+    }
+</style>
+</head>
+<body>
+
+    <button onclick="clickMe('Hello,wolrd')"
+
+
+
+    
+    <h2>동적요소 추가</h2>
+    <button id="addbtn">동적요소 추가</button>
+    <div id="container"></div>
+
+
+    <hr />
+    <h3>Click 이벤트</h3>
+    <button id="clickbtn1">눌러보세요(alert)</button>
+    <button id="clickbtn2">눌러보세요(innerText)</button>
+    <button id="clickbtn3">눌러보세요(innerHTML)</button>
+    <div id="output">여기에 데이터가 바뀝니다</div>
+
+    <script>
+        const clickbtn1 = domcumnt.querySelector("#clickbtn1");
+        clickbtn1.addEventListener("mouseover", function(a){
+            alert("Hello" + a.innerText);
+        })
+
+    </script>
+
+    <!--계산기-->
+    <h3>덧셈 계산기</h3>
+    <input type ="text" id="num1" size="5">
+    <input type ="text" id="num2" size="5">
+    <button onclick="add()">+</button>
+    <input type="text" id="result" size="5" readonly>
+
+
+
+    <!-- innerHTML / innerText / textContent -->
+     <div id="div1" onclick="changeText()" >Hello</div>
+</body>
+</html>
+
+<script>
+
+<div id="list">
+    <p id="item1">Apple</p>
+    <p id="item1">Banana</p>
+    <p id="item1">Apple</p>
+</div>    
+
+
+
+
+
+
+
+/* 문단추가 3번째
+*/
+    const addbtn = document.querySelector("#addbtn");
+    const container = document.querySelector("#container");
+
+    addbtn.addEventListener("click", function(){
+    const p = document.createElement("p");
+    p.textContent = "새 문단입니다.";
+    container.appendChild(p);
+    })
+    
+
+
+
+/*덧셈 */
+
+    function add() {
+
+        const num1 = document.querySelector("#num1");
+        const num2 = document.querySelector("#num2");
+        const result = document.querySelector("#result");
+
+
+        let n1 = Number(num1.value);
+        let n2 = Number(num2.value);
+        result.value = n1 + n2;
+
+    }
+
+    function changeText() {
+        document.getElementById("div1").innerHTML = "<h1>Hello World!</h1>"
+    }
+/*버튼클릭 하면 메시지*/
+    const btn1 = document.querySelector("#clickbtn1");
+const btn2 = document.querySelector("#clickbtn2");
+const btn3 = document.querySelector("#clickbtn3");
+const output = document.querySelector("#output");
+
+btn1.addEventListener("click", function() {
+    alert("버튼을 클릭했습니다!");
+});
+
+btn2.addEventListener("click", function() {
+    output.innerText = "innerText로 바꿨습니다!";
+});
+
+btn3.addEventListener("click", function() {
+    output.innerHTML = "innerHTML로 바꿨습니다!";
+});
+</script>

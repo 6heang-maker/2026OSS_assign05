@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script> 
+        function hello(){
+            alert("Hello, World!!!");
+        }
+        window.addEventListener("load", function(){
+            const btn1 = document.querySelector("#btn1");
+            const btn2 = document.querySelector("#btn2");
+            const biv1 = document.querySelector("#biv1");
+            btn1.addEventListener("click", function(){
+                alert(div1.innerHtml);
+                /*div.innerHtml = "<h1>안녕하세요.<h1>";*/
+                const hello = document.createElement("h1");
+                hello.textContent = "안녕하세요"; 
+                hello.addEventListener("click", function(){
+                    alert("안녕하세요");
+                })
+                div1.appendChild(hello);
+
+            });
+                btn2.addEventListener("click", function(){
+                    
+                })
+        });
+
+    </script>
+</head>
+<body>
+    <button id="btn1">Click Me</button>
+    <div id="div1">Hello World!!!</div>
+
+
+</body>
+
+
+
+
+
+
+
+</html>
+
