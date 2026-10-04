@@ -37,21 +37,15 @@
                     alert("내용을 입력하세요.");
                     return;
                 }
-
                 const one = document.createElement("li");
-
                 one.textContent = fruit.value;
-
                 const rbtn = document.createElement("button");
-
                 rbtn.textContent = "삭제";
-
                 rbtn.addEventListener("click", function(e){
-
                     e.target.parentElement.remove();
                 });
 
-                
+
                 one.appendChild(rbtn);
 
                 list.appendChild(one);
