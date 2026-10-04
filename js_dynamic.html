@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript DOM Practice</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        input {
+            padding: 6px;
+        }
+
+        button {
+            padding: 6px 10px;
+            margin-left: 5px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    </style>
+
+    <script>
+
+        window.addEventListener("load", function(){
+
+            const fruit = document.querySelector("#fruit");
+            const btn1 = document.querySelector("#btn1");
+            const list = document.querySelector("#list");
+
+            btn1.addEventListener("click", function(){
+
+                if(fruit.value.trim() === ""){
+                    alert("내용을 입력하세요.");
+                    return;
+                }
+
+                const one = document.createElement("li");
+
+                one.textContent = fruit.value;
+
+                const rbtn = document.createElement("button");
+
+                rbtn.textContent = "삭제";
+
+                rbtn.addEventListener("click", function(e){
+
+                    e.target.parentElement.remove();
+
+                });
+
+                one.appendChild(rbtn);
+
+                list.appendChild(one);
+
+                fruit.value = "";
+
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>JavaScript DOM Practice</h2>
+
+    <input type="text" id="fruit" placeholder="내용을 입력하세요">
+
+    <button id="btn1">추가</button>
+
+    <ul id="list">
+
+    </ul>
+
+</body>
+</html>
