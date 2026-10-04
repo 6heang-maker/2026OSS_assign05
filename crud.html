@@ -6,7 +6,54 @@
     <title>Friend Management</title>
 
     <style>
+        body {
+            font-family: Arial;
+            background-color: #eeeeee;
+            padding: 25px;
+        }
 
+        h1 {
+            color: darkblue;
+        }
+
+        form {
+            background-color: white;
+            width: 450px;
+            padding: 20px;
+            border: 2px solid gray;
+            margin-bottom: 30px;
+        }
+
+        input, select {
+            padding: 6px;
+            margin: 3px;
+        }
+
+        button {
+            padding: 7px;
+            margin: 3px;
+            background-color: lightgray;
+        }
+
+        button:hover {
+            background-color: yellow;
+        }
+
+        table {
+            width: 95%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th {
+            background-color: lightblue;
+            padding: 8px;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center;
+        }
     </style>
 
     <script>
@@ -140,7 +187,7 @@
             function deleteFriend(i){
                 const check = confirm("삭제하시나요?");
                 if(check === true){
-                    
+
                     friends.splice(i, 1);
                     render();
                 }
