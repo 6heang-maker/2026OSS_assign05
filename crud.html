@@ -107,6 +107,36 @@
 
                 e.preventDefault();
 
+
+                if(name.value === ""){
+                    alert("이름 입력.");
+                    return;
+                }
+                if(age.value === ""){
+                    alert("나이 입력.");
+                    return;
+                }
+                if(age.value < 1 || age.value > 100){
+                    alert("나이 재입력.");
+                    return;
+                }
+                if(phone.value === ""){
+                    alert("전화번호 입력.");
+                    return;
+                }
+                if(email.value === ""){
+                    alert("이메일 입력.");
+                    return;
+                }
+                if(email.value.indexOf("@") === -1){
+                    alert("이메일 재입력.");
+                    return;
+                }
+                if(group.value === ""){
+                    alert("관계 지정.");
+                    return;
+                }
+
                 const newFriend = {
                     id: nextId,
                     name: name.value,
@@ -117,7 +147,9 @@
                 };
 
                 friends.push(newFriend);
+
                 nextId = nextId + 1;
+
                 name.value = "";
                 age.value = "";
                 phone.value = "";
@@ -128,6 +160,8 @@
                 render();
 
             });
+
+
             render();
 
         });
