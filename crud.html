@@ -121,8 +121,9 @@
                 email.value = friends[i].email;
                 group.value = friends[i].group;
 
-                
                 editIndex = i;
+
+                saveBtn.textContent = "Save";
             }
 
 
@@ -167,18 +168,35 @@
                 }
 
 
-                const newFriend = {
-                    id: nextId,
-                    name: name.value,
-                    age: Number(age.value),
-                    phone: phone.value,
-                    email: email.value,
-                    group: group.value
-                };
+                if(editIndex === -1){
 
-                friends.push(newFriend);
+                    const newFriend = {
+                        id: nextId,
+                        name: name.value,
+                        age: age.value,
+                        phone: phone.value,
+                        email: email.value,
+                        group: group.value
+                    };
 
-                nextId = nextId + 1;
+                    friends.push(newFriend);
+
+                    nextId = nextId + 1;
+
+                }
+
+                else {
+
+                    friends[editIndex].name = name.value;
+                    friends[editIndex].age = age.value;
+                    friends[editIndex].phone = phone.value;
+                    friends[editIndex].email = email.value;
+                    friends[editIndex].group = group.value;
+                    editIndex = -1;
+
+                    saveBtn.textContent = "Add";
+                }
+
 
                 name.value = "";
                 age.value = "";
